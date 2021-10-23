@@ -14,7 +14,7 @@ public class LunettesMsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(LunettesMsApplication.class, args);
 	}
-	/*
+	
 	@Autowired
 	private LunetteRepository repository;
 	
@@ -22,14 +22,11 @@ public class LunettesMsApplication {
 	ApplicationRunner init() {
 		return (args) -> {
 			// save
-			repository.save(new Lunette("ray-ban", "aviator", 105.2));
-			repository.save(new Lunette("DIOR", "ab", 190.23));
-			repository.save(new Lunette("GUCCI", "ba", 190.23));
-			// fetch
+			repository.save(new Lunette("ray-ban", "aviator", 105));
 			repository.findAll().forEach(System.out::println);
 
 		};
 	}
-*/
+
 	
 }
