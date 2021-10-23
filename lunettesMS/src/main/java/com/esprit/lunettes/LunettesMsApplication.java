@@ -23,8 +23,8 @@ public class LunettesMsApplication {
 		return (args) -> {
 			// save
 			repository.save(new Lunette("ray-ban", "aviator", 105.2));
-			repository.save(new Lunette("Sarra", "ab", "sa@esprit.tn"));
-			repository.save(new Lunette("Mohamed", "ba", "mo@esprit.tn"));
+			repository.save(new Lunette("DIOR", "ab", 190.23));
+			repository.save(new Lunette("GUCCI", "ba", 190.23));
 			// fetch
 			repository.findAll().forEach(System.out::println);
 
