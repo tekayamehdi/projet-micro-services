@@ -1,6 +1,6 @@
 package com.esprit.lunettes;
 
-import java.io.Serializable; 
+import java.io.Serializable;  
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,7 +14,7 @@ public class Lunette implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public Lunette(String marque, String modele, float prix) {
+	public Lunette(String marque, String modele, double prix) {
 		this.marque= marque;
 		this.modele= modele;
 		this.prix = prix;
@@ -28,7 +28,7 @@ public class Lunette implements Serializable {
 	@GeneratedValue
 	private int id;
 	private String marque, modele;
-	private float prix;
+	private double prix;
 
 	public int getId() {
 		return id;
@@ -54,11 +54,11 @@ public class Lunette implements Serializable {
 		this.modele = modele;
 	}
 
-	public float getPrix() {
+	public double getPrix() {
 		return prix;
 	}
 
-	public void setPrix(float prix) {
+	public void setPrix(double prix) {
 		this.prix = prix;
 	}
 	

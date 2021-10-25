@@ -22,7 +22,8 @@ public class LunettesMsApplication {
 	ApplicationRunner init() {
 		return (args) -> {
 			// save
-			repository.save(new Lunette("ray-ban", "aviator", 105));
+			
+			repository.save(new Lunette("rayban", "aviator667", 105.2));
 			repository.findAll().forEach(System.out::println);
 
 		};
