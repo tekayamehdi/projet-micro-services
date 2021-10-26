@@ -14,10 +14,10 @@ public interface LunetteRepository extends JpaRepository<Lunette, Integer> {
 	public Page<Lunette> lunetteByMarque(@Param("id") int id, Pageable pageable);
 	
 
-	 @Query("SELECT marque FROM Lunettes c where c.id=:id")
+	 @Query("SELECT modele FROM Lunette c where c.id=:id")
 	    public String lunettesByModele(@Param("id")int id);
 	 
-	 @Query("SELECT marque FROM Lunettes ")
+	 @Query("SELECT marque FROM Lunette ")
 	 	public List <Lunette> listLunetteMarque();
 
 }
