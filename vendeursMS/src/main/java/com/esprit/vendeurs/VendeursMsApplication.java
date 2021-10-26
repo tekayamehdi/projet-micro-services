@@ -9,13 +9,13 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-@EnableEurekaClient
+@EnableDiscoveryClient
 public class VendeursMsApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(VendeursMsApplication.class, args);
 	}
-
+/*
 @Autowired
 	private VendeursRepository repository;
 @Autowired 
@@ -27,9 +27,9 @@ public class VendeursMsApplication {
 			// save
 			//ivendeurs.addvendeur(new Vendeurs("habib","habibhnini@gmail.com",6));
 			//update
-			ivendeurs.updateVendeur(new Vendeurs("medhabib","habibhnini123@gmail.com",5),6);
+			//ivendeurs.updateVendeur(new Vendeurs("medhabib","habibhnini123@gmail.com",5),6);
 			// fetchAll
-			System.out.println(ivendeurs.getAllVendeurs());
+			//System.out.println(ivendeurs.getAllVendeurs());
 			//fetchOneNameByID
 			//System.out.println(ivendeurs.getVendeursnomById(3));
 			//fetchAllName
@@ -37,5 +37,5 @@ public class VendeursMsApplication {
 			//Delete
 			//ivendeurs.deleteVendeursById(1);
 		};
-	}
+	}*/
 }
