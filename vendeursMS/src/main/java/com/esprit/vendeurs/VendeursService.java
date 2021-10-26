@@ -1,8 +1,10 @@
 package com.esprit.vendeurs;
 
+import java.lang.reflect.Array;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -41,6 +43,18 @@ public class VendeursService implements IVendeursService {
 	public List<Vendeurs> getAllVendeursName() {
 
 		return vendeurR.listVendeurName();
+	}
+
+	@Override
+	public ResponseEntity updateVendeur(Vendeurs vendeur,int id) {
+		
+		  Vendeurs currentVendeur = vendeurR.findById(id).orElseThrow(RuntimeException::new);
+	        currentVendeur.setNom(vendeur.getNom());
+	        currentVendeur.setContact(vendeur.getContact());
+	        currentVendeur.setNum_caisse(vendeur.getNum_caisse());
+	        vendeurR.save(currentVendeur);
+
+		return ResponseEntity.ok(currentVendeur);
 	}
 
 }

@@ -14,12 +14,13 @@ public class Vendeurs implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	public Vendeurs(int id, String nom, String contact, int num_caisse) {
-		this.id = id;
+	public Vendeurs(String nom, String contact, int num_caisse) {
+		super();
 		this.nom = nom;
 		this.contact = contact;
 		this.num_caisse = num_caisse;
 	}
+
 	public Vendeurs() {
 		super();
 	}
@@ -56,6 +57,11 @@ public class Vendeurs implements Serializable {
 	}
 	public void setNum_caisse(int num_caisse) {
 		this.num_caisse = num_caisse;
+	}
+
+	@Override
+	public String toString() {
+		return "Vendeurs [id=" + id + ", nom=" + nom + ", contact=" + contact + ", num_caisse=" + num_caisse + "]";
 	}
 	
 	

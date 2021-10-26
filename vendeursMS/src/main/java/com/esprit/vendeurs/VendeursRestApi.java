@@ -35,15 +35,11 @@ private VendeursRepository vendeurR ;
 		return vendeur;
 	}
 	
-	 @PutMapping("/udpdate/{id}")
-	    public ResponseEntity updateClient(@PathVariable int id, @RequestBody Vendeurs vendeur) {
-	        Vendeurs currentVendeur = vendeurR.findById(id).orElseThrow(RuntimeException::new);
-	        currentVendeur.setNom(vendeur.getNom());
-	        currentVendeur.setContact(vendeur.getContact());
-	        currentVendeur.setNum_caisse(vendeur.getNum_caisse());
-	        currentVendeur = vendeurR.save(vendeur);
-
-	        return ResponseEntity.ok(currentVendeur);
+	 @PostMapping("/udpdate")
+	 @ResponseBody
+	    public Vendeurs updateClient(@RequestBody Vendeurs vendeur) {
+		 ivendeursservice.updateVendeur(vendeur, vendeur.getId());
+		 return vendeur;
 	    }
 	 @DeleteMapping("/delete/{id}")
 	 @ResponseBody

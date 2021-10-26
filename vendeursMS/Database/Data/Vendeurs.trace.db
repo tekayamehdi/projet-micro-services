@@ -1,9 +1,67 @@
-2021-10-22 23:14:03 database: wrong user or password; user: "SA"
-org.h2.message.DbException: Wrong user name or password [28000-200]
-	at org.h2.message.DbException.get(DbException.java:205)
-	at org.h2.message.DbException.get(DbException.java:181)
-	at org.h2.message.DbException.get(DbException.java:170)
-	at org.h2.engine.Engine.openSession(Engine.java:131)
+2021-10-23 17:45:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE HIBERNATE_SEQUENCE (NEXT_VAL BIGINT) ENGINE=[*]INNODB"; expected "identifier"; SQL statement:
+create table hibernate_sequence (next_val bigint) engine=InnoDB [42001-200]
+2021-10-23 17:45:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HIBERNATE_SEQUENCE" not found; SQL statement:
+insert into hibernate_sequence values ( 1 ) [42102-200]
+2021-10-23 17:45:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE VENDEURS (ID INTEGER NOT NULL, CONTACT VARCHAR(255), NOM VARCHAR(255), NUM_CAISSE INTEGER NOT NULL, PRIMARY KEY (ID)) ENGINE=[*]INNODB"; expected "identifier"; SQL statement:
+create table vendeurs (id integer not null, contact varchar(255), nom varchar(255), num_caisse integer not null, primary key (id)) engine=InnoDB [42001-200]
+2021-10-23 17:45:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "VENDEURS" not found; SQL statement:
+select vendeurs0_.id as id1_0_0_, vendeurs0_.contact as contact2_0_0_, vendeurs0_.nom as nom3_0_0_, vendeurs0_.num_caisse as num_cais4_0_0_ from vendeurs vendeurs0_ where vendeurs0_.id=? [42102-200]
+2021-10-23 17:49:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE HIBERNATE_SEQUENCE (NEXT_VAL BIGINT) ENGINE=[*]INNODB"; expected "identifier"; SQL statement:
+create table hibernate_sequence (next_val bigint) engine=InnoDB [42001-200]
+2021-10-23 17:49:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HIBERNATE_SEQUENCE" not found; SQL statement:
+insert into hibernate_sequence values ( 1 ) [42102-200]
+2021-10-23 17:49:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE VENDEURS (ID INTEGER NOT NULL, CONTACT VARCHAR(255), NOM VARCHAR(255), NUM_CAISSE INTEGER NOT NULL, PRIMARY KEY (ID)) ENGINE=[*]INNODB"; expected "identifier"; SQL statement:
+create table vendeurs (id integer not null, contact varchar(255), nom varchar(255), num_caisse integer not null, primary key (id)) engine=InnoDB [42001-200]
+2021-10-23 17:49:24 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HIBERNATE_SEQUENCE" not found; SQL statement:
+select next_val as id_val from hibernate_sequence for update [42102-200]
+2021-10-23 17:50:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE HIBERNATE_SEQUENCE (NEXT_VAL BIGINT) ENGINE=[*]INNODB"; expected "identifier"; SQL statement:
+create table hibernate_sequence (next_val bigint) engine=InnoDB [42001-200]
+2021-10-23 17:50:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HIBERNATE_SEQUENCE" not found; SQL statement:
+insert into hibernate_sequence values ( 1 ) [42102-200]
+2021-10-23 17:50:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE VENDEURS (ID INTEGER NOT NULL, CONTACT VARCHAR(255), NOM VARCHAR(255), NUM_CAISSE INTEGER NOT NULL, PRIMARY KEY (ID)) ENGINE=[*]INNODB"; expected "identifier"; SQL statement:
+create table vendeurs (id integer not null, contact varchar(255), nom varchar(255), num_caisse integer not null, primary key (id)) engine=InnoDB [42001-200]
+2021-10-23 17:50:26 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HIBERNATE_SEQUENCE" not found; SQL statement:
+select next_val as id_val from hibernate_sequence for update [42102-200]
+2021-10-23 17:51:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE HIBERNATE_SEQUENCE (NEXT_VAL BIGINT) ENGINE=[*]INNODB"; expected "identifier"; SQL statement:
+create table hibernate_sequence (next_val bigint) engine=InnoDB [42001-200]
+2021-10-23 17:51:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HIBERNATE_SEQUENCE" not found; SQL statement:
+insert into hibernate_sequence values ( 1 ) [42102-200]
+2021-10-23 17:51:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE VENDEURS (ID INTEGER NOT NULL, CONTACT VARCHAR(255), NOM VARCHAR(255), NUM_CAISSE INTEGER NOT NULL, PRIMARY KEY (ID)) ENGINE=[*]INNODB"; expected "identifier"; SQL statement:
+create table vendeurs (id integer not null, contact varchar(255), nom varchar(255), num_caisse integer not null, primary key (id)) engine=InnoDB [42001-200]
+2021-10-23 17:51:33 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HIBERNATE_SEQUENCE" not found; SQL statement:
+select next_val as id_val from hibernate_sequence for update [42102-200]
+2021-10-23 18:26:51 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:F:/esprit/5TWIN4/AWD/projet-micro-services/vendeursMS/Database/Data/Vendeurs.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:481)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:402)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3579)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:170)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:103)
+	at org.h2.engine.Database.getPageStore(Database.java:2659)
+	at org.h2.engine.Database.open(Database.java:675)
+	at org.h2.engine.Database.openDatabase(Database.java:307)
+	at org.h2.engine.Database.<init>(Database.java:301)
+	at org.h2.engine.Engine.openSession(Engine.java:74)
 	at org.h2.engine.Engine.openSession(Engine.java:192)
 	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
 	at org.h2.engine.Engine.createSession(Engine.java:166)
@@ -56,17 +114,37 @@ org.h2.message.DbException: Wrong user name or password [28000-200]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
-	at com.esprit.vendeurs.VendeursMsApplication.main(VendeursMsApplication.java:10)
-Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-200]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:461)
+	at com.esprit.vendeurs.VendeursMsApplication.main(VendeursMsApplication.java:16)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:F:/esprit/5TWIN4/AWD/projet-micro-services/vendeursMS/Database/Data/Vendeurs.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
-	... 57 more
-2021-10-22 23:47:25 database: wrong user or password; user: "SA"
-org.h2.message.DbException: Wrong user name or password [28000-200]
-	at org.h2.message.DbException.get(DbException.java:205)
-	at org.h2.message.DbException.get(DbException.java:181)
-	at org.h2.message.DbException.get(DbException.java:170)
-	at org.h2.engine.Engine.openSession(Engine.java:131)
+	... 72 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:F:/esprit/5TWIN4/AWD/projet-micro-services/vendeursMS/Database/Data/Vendeurs.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 66 more
+2021-10-23 18:55:46 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:F:/esprit/5TWIN4/AWD/projet-micro-services/vendeursMS/Database/Data/Vendeurs.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:481)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:402)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3579)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:170)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:103)
+	at org.h2.engine.Database.getPageStore(Database.java:2659)
+	at org.h2.engine.Database.open(Database.java:675)
+	at org.h2.engine.Database.openDatabase(Database.java:307)
+	at org.h2.engine.Database.<init>(Database.java:301)
+	at org.h2.engine.Engine.openSession(Engine.java:74)
 	at org.h2.engine.Engine.openSession(Engine.java:192)
 	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
 	at org.h2.engine.Engine.createSession(Engine.java:166)
@@ -119,8 +197,60 @@ org.h2.message.DbException: Wrong user name or password [28000-200]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
-	at com.esprit.vendeurs.VendeursMsApplication.main(VendeursMsApplication.java:10)
-Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-200]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:461)
+	at com.esprit.vendeurs.VendeursMsApplication.main(VendeursMsApplication.java:16)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:F:/esprit/5TWIN4/AWD/projet-micro-services/vendeursMS/Database/Data/Vendeurs.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
-	... 57 more
+	... 72 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:F:/esprit/5TWIN4/AWD/projet-micro-services/vendeursMS/Database/Data/Vendeurs.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 66 more
+2021-10-25 12:34:37 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:F:/esprit/5TWIN4/AWD/projet-micro-services/vendeursMS/Database/Data/Vendeurs.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:481)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:402)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3579)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:170)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:103)
+	at org.h2.engine.Database.getPageStore(Database.java:2659)
+	at org.h2.engine.Database.open(Database.java:675)
+	at org.h2.engine.Database.openDatabase(Database.java:307)
+	at org.h2.engine.Database.<init>(Database.java:301)
+	at org.h2.engine.Engine.openSession(Engine.java:74)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:309)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:289)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1008)
+	at org.h2.server.web.WebApp.process(WebApp.java:223)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:173)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:F:/esprit/5TWIN4/AWD/projet-micro-services/vendeursMS/Database/Data/Vendeurs.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 31 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:F:/esprit/5TWIN4/AWD/projet-micro-services/vendeursMS/Database/Data/Vendeurs.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 25 more
