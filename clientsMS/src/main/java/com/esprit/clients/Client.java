@@ -44,8 +44,22 @@ public class Client implements Serializable {
 		return adresse;
 	}
 
-	
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
 
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+	
 	public Client(String nom, String prenom, String email, String adresse) {
 		super();
 		this.nom = nom;
