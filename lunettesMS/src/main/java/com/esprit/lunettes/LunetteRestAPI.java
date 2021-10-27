@@ -8,14 +8,21 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-
+@RestController
+@RequestMapping("/lunettes")
 public class LunetteRestAPI {
 
 	private String title="Hello, I'm the lunettes Microservice";
+	@Autowired
 	ILunettesService ilunettesservice;
 	private LunetteRepository lunetteR ;
 
@@ -35,17 +42,12 @@ public class LunetteRestAPI {
 		return lunette;
 	}
 	
-	 @PutMapping("/update/{id}")
-	    public ResponseEntity updateLunette(@PathVariable int id, @RequestBody Lunette lunette) {
-	        Lunette currentLunette= lunetteR.findById(id).orElseThrow(RuntimeException::new);
-	        currentLunette.setMarque(lunette.getMarque());
-	        currentLunette.setModele(lunette.getModele());
-	        currentLunette.setPrix(lunette.getPrix());
-	        currentLunette= lunetteR.save(lunette);
+	@PutMapping("/update/{id}")
+	@ResponseStatus(HttpStatus.OK)
+	public Lunette updatevenderus(@PathVariable("id") int id, @RequestBody Lunette v) {
 
-	        return ResponseEntity.ok(currentLunette);
-	    }
-	 
+		return ilunettesservice.updateLunettes(id, v);
+	}
 	 @DeleteMapping("/delete/{id}")
 	 @ResponseBody
 	 	 public void deleteLunetteById(@PathVariable("id")int id)
@@ -60,11 +62,7 @@ public class LunetteRestAPI {
 			
 			return ilunettesservice.getAllLunettes();
 		}
-	 @GetMapping(value="/getMarqueLunettes")
-	 	@ResponseBody
-	 	public List<Lunette> getAllLunettesMarque(){
-		 return ilunettesservice.getAllLunettesMarque();
-	 }
+
 	 @GetMapping("/getlunetteModelebyid/{id}")
 	 @ResponseBody
 	 public String getLunetteModeleById(@PathVariable("id")int id) {

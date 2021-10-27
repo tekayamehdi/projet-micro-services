@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  lentille:
+    build: ./lentille
+    ports:
+      - "4000:4000"
+volumes:
+    data-db:
+
