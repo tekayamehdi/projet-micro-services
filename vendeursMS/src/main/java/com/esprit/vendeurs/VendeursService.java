@@ -20,11 +20,13 @@ public class VendeursService implements IVendeursService {
 	}
 
 	@Override
-	public void deleteVendeursById(int vendeursId) {
-
+	public String deleteVendeursById(int vendeursId) {
+		if (vendeurR.findById(vendeursId).isPresent()) {
 		Vendeurs vendeur = vendeurR.findById(vendeursId).get();
 		vendeurR.delete(vendeur);
-
+		return "vendeurs supprimé";
+		}else
+			return "error";
 	}
 
 	@Override
@@ -46,15 +48,18 @@ public class VendeursService implements IVendeursService {
 	}
 
 	@Override
-	public ResponseEntity updateVendeur(Vendeurs vendeur,int id) {
-		
-		  Vendeurs currentVendeur = vendeurR.findById(id).orElseThrow(RuntimeException::new);
-	        currentVendeur.setNom(vendeur.getNom());
-	        currentVendeur.setContact(vendeur.getContact());
-	        currentVendeur.setNum_caisse(vendeur.getNum_caisse());
-	        vendeurR.save(currentVendeur);
+	public Vendeurs updateVendeur(int id,Vendeurs vendeur) {
+		if (vendeurR.findById(id).isPresent()) {
+			Vendeurs existingvendeurs = vendeurR.findById(id).get();
+			existingvendeurs.setNom(vendeur.getNom());
+			existingvendeurs.setContact(vendeur.getContact());
+			existingvendeurs.setNum_caisse(vendeur.getNum_caisse());
+			return vendeurR.save(existingvendeurs);
 
-		return ResponseEntity.ok(currentVendeur);
+		}
+		else
+			return null;
+	
 	}
 
 }

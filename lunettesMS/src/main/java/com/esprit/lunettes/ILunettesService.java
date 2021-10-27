@@ -1,6 +1,6 @@
 package com.esprit.lunettes;
-
 import java.util.List;
+
 
 public interface ILunettesService {
 	
@@ -13,4 +13,5 @@ public interface ILunettesService {
 	public String getLunettemodeleById(int lunetteId);
 	
 	public List<Lunette>getAllLunettesMarque();
+	public Lunette updateLunettes(int id,Lunette lunettes);
 }
