@@ -63,3 +63,10 @@ services:
     ports:
       - "3001:8083"
     image: "docker-service-clients"  
+  lentille: 
+    build: ../../microservice-node/lentille
+    ports:
+    - "4000:4000"
+volumes: 
+  data-db:
+  
