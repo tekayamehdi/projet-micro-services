@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
+
+
 @Service
 public class LunettesService implements ILunettesService{
 
@@ -40,6 +42,21 @@ public class LunettesService implements ILunettesService{
 	@Override
 	public List<Lunette> getAllLunettes() {
 		return lunetteR.findAll();
+	}
+
+	@Override
+	public Lunette updateLunettes(int id, Lunette lunettes) {
+		if (lunetteR.findById(id).isPresent()) {
+			Lunette existinglunettes = lunetteR.findById(id).get();
+			existinglunettes.setMarque(lunettes.getMarque());
+			existinglunettes.setModele(lunettes.getModele());
+			existinglunettes.setPrix(lunettes.getPrix());
+			return lunetteR.save(existinglunettes);
+
+		}
+		else
+			return null;
+	
 	}
 
 

@@ -59,11 +59,6 @@ public class VendeursRestApi {
 		return ivendeursservice.getAllVendeurs();
 	}
 
-	@GetMapping(value = "/getNomVendeurs")
-	@ResponseStatus(HttpStatus.OK)
-	public List<Vendeurs> getAllvendeursName() {
-		return ivendeursservice.getAllVendeursName();
-	}
 
 	@GetMapping("/getvendeurNamebyid/{id}")
 	@ResponseBody
