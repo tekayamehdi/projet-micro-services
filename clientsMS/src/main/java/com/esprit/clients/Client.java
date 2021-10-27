@@ -3,6 +3,7 @@ package com.esprit.clients;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,6 +16,7 @@ public class Client implements Serializable {
 	@Id
 	@GeneratedValue
 	private int id;
+	@Column(name="nom")
 	private String nom;
 	private String prenom;
 	private String email;

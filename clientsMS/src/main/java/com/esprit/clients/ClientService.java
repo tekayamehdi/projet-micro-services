@@ -42,4 +42,19 @@ public class ClientService implements IClientService {
 		return clientR.listClientName();
 	}
 
+	@Override
+	public Client updateclient(int id, Client client) {
+		if (clientR.findById(id).isPresent()) {
+			Client existingclient = clientR.findById(id).get();
+			existingclient.setNom(client.getNom());
+			existingclient.setPrenom(client.getPrenom());
+			existingclient.setEmail(client.getEmail());
+			existingclient.setAdresse(client.getAdresse());
+			return clientR.save(existingclient);
+
+		}
+		else
+			return null;
+	}
+
 }

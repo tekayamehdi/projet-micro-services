@@ -12,8 +12,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.http.HttpStatus;
 @RestController
 @RequestMapping("/client")
 public class ClientRestAPI {
@@ -36,17 +37,13 @@ private ClientRepository clientR ;
 		return client;
 	}
 	
-	 @PutMapping("/udpdate/{id}")
-	    public ResponseEntity updateClient(@PathVariable int id, @RequestBody Client client) {
-	        Client currentClient = clientR.findById(id).orElseThrow(RuntimeException::new);
-	        currentClient.setNom(client.getNom());
-	        currentClient.setPrenom(client.getPrenom());
-	        currentClient.setEmail(client.getEmail());
-	        currentClient.setAdresse(client.getAdresse());
-	        currentClient = clientR.save(client);
 
-	        return ResponseEntity.ok(currentClient);
-	    }
+	@PutMapping("/update/{id}")
+	@ResponseStatus(HttpStatus.OK)
+	public Client updateclient(@PathVariable("id") int id, @RequestBody Client c) {
+
+		return iclientservice.updateclient(id, c);
+	}
 	 @DeleteMapping("/delete/{id}")
 	 @ResponseBody
 	 public void deleteClientById(@PathVariable("id")int id)
@@ -61,11 +58,6 @@ private ClientRepository clientR ;
 			
 			return iclientservice.getAllClient();
 		}
-	 @GetMapping(value="/getNomClient")
-	 	@ResponseBody
-	 	public List<Client> getAllclientName(){
-		 return iclientservice.getAllClientName();
-	 }
 	 @GetMapping("/getclientNamebyid/{id}")
 	 @ResponseBody
 	 public String getClientNameById(@PathVariable("id")int id) {
