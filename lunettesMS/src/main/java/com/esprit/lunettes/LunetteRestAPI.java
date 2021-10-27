@@ -8,14 +8,18 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-
+@RestController
+@RequestMapping("/lunettes")
 public class LunetteRestAPI {
 
 	private String title="Hello, I'm the lunettes Microservice";
+	@Autowired
 	ILunettesService ilunettesservice;
 	private LunetteRepository lunetteR ;
 

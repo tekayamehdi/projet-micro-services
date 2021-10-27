@@ -1,5 +1,4 @@
 package com.esprit.lunettes;
-
 import java.util.List;
 
 public interface ILunettesService {
