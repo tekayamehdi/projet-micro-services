@@ -24,5 +24,12 @@ services:
     ports:
       - "3001:8086"
     image: "docker-service-lunettes"
+  clients_B:
+    build: ../../clientsMS
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+    ports:
+      - "3002:8083"
+    image: "docker-service-clients"
     
 
