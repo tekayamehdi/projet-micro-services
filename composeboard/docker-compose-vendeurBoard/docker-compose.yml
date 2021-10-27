@@ -47,3 +47,19 @@ services:
     ports:
     - "3002:8082"
     image: "docker-lunettes-service"
+  clients:
+    build:  ../../clientsMS
+    environment: 
+    - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+    - spring.h2.console.enabled=true
+    - spring.h2.console.path=/h2
+    - spring.datasource.url=jdbc:h2:file:./Database/Data/Vendeurs;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE
+    - spring.datasource.username=sa
+    - spring.datasource.password=
+    - spring.datasource.driver-class-name=org.h2.Driver
+    - spring.jpa.hibernate.ddl-auto=update
+    - spring.h2.console.settings.web-allow-others=true
+     
+    ports:
+      - "3001:8083"
+    image: "docker-service-clients"  
