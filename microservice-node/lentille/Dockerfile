@@ -9,4 +9,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 4000
-CMD [ "node", "lunette.js" ]
+CMD [ "node", "lentille.js" ]

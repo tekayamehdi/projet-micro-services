@@ -12,7 +12,7 @@ app.use(express.json());
 
 require("./lentille.model.js");
 const Lentille = mongoose.model("lentilles");
-const url = process.env.MONGO_URL || "mongodb://mongo:27017/lentille";
+const url = process.env.MONGO_URL || "mongodb+srv://awd:awd@cluster0.padfh.mongodb.net/test";
 mongoose
   .connect(url, {
     useNewUrlParser: true,
@@ -31,6 +31,7 @@ app.get("/", (req, res) => {
 
 app.post("/lentille", (req, res) => {
   const lentille = new Lentille(req.body);
+
   lentille
     .save()
     .then((data) => {
