@@ -1,5 +1,6 @@
 package com.esprit.lunettes;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,13 +26,13 @@ public class LunetteRestAPI {
 	@Autowired
 	ILunettesService ilunettesservice;
 	private LunetteRepository lunetteR ;
-
+	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping("/hello")
 	public String sayHello() {
 		System.out.println(title);
 		return title;
 	}
-	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/ajouter")
 	@ResponseBody
 	public Lunette ajouterLunette(@RequestBody Lunette lunette)
@@ -41,13 +42,14 @@ public class LunetteRestAPI {
 		
 		return lunette;
 	}
-	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@PutMapping("/update/{id}")
 	@ResponseStatus(HttpStatus.OK)
 	public Lunette updatevenderus(@PathVariable("id") int id, @RequestBody Lunette v) {
 
 		return ilunettesservice.updateLunettes(id, v);
 	}
+	@CrossOrigin(origins = "http://localhost:4200")
 	 @DeleteMapping("/delete/{id}")
 	 @ResponseBody
 	 	 public void deleteLunetteById(@PathVariable("id")int id)
@@ -55,6 +57,7 @@ public class LunetteRestAPI {
 		 ilunettesservice.deleteLunetteById(id);
 		 
 	 }
+	@CrossOrigin(origins = "http://localhost:4200")
 	 @GetMapping(value = "/getAllLunettes")
 	    @ResponseBody
 		public List<Lunette> getAllLunettes() {
@@ -62,7 +65,7 @@ public class LunetteRestAPI {
 			
 			return ilunettesservice.getAllLunettes();
 		}
-
+	@CrossOrigin(origins = "http://localhost:4200")
 	 @GetMapping("/getlunetteModelebyid/{id}")
 	 @ResponseBody
 	 public String getLunetteModeleById(@PathVariable("id")int id) {

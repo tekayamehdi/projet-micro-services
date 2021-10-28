@@ -1,0 +1,56 @@
+
+<br>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a>Buyer</a></li>
+        <li class="breadcrumb-item"><a>Checkout</a></li>
+    </ol>
+</nav>
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                Product Detail
+            </div>
+            <div class="card-body product-detail">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="{{product.uploadPhoto}}" class="card-img-top" alt="{{product.name}}">
+                    </div>
+                    <div class="col-md-8">
+                        <h4 class="card-title">{{product.name}}</h4>
+                        <br>
+                        <p class="card-text product-desc">{{product.productDesc}}</p>
+                        <p>
+                            <span class="float-right"><strong>Quantite</strong>:
+                                {{product.price}}</span></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                Address Detail
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{useraddress.name}}</h5>
+                <p class="card-text">{{useraddress.addLine1}},{{useraddress.addLine2}}</p>
+                <p class="card-text">{{useraddress.city}},{{useraddress.state}}</p>
+                <p class="card-text">Postal Code: {{useraddress.zipCode}}</p>
+                <p class="card-text">Contact Number: {{usercontact}}</p>
+                <a class="btn btn-primary" (click)="placeOrder()">Deliver Here</a>
+                <div class="alert alert-info" role="alert">
+                    <strong>Note: </strong>
+                    We are not giving mutiple address addition, If you want to deliver in
+                    diffrent addres for now chage the address in
+                    <span routerLink="/my-profile" class="text-info sim-pointer">My profile</span>
+                    section.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,93 @@
+
+<br>
+<div class="row">
+    <div class="col-md-10">
+        <strong>All Vendeurs List</strong>
+    </div>
+    <div class="col-md-2">
+        <button type="button" class="btn btn-dark float-right" (click)="addProductPopup()" data-toggle="modal"
+                data-target="#addEditVendeursModal">
+            Add New Vendeurs
+        </button>
+    </div>
+</div>
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">name</th>
+        <!-- <th scope="col">Display Image</th> -->
+        <th scope="col">email</th>
+        <th scope="col">num_caisse</th>
+<th>action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let product_data of vendeurall; let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{product_data.nom}}</td>
+        <!-- <td>{{product_data.uploadPhoto}}</td> --> 
+        <td>{{product_data.contact}}</td>
+        <td>{{product_data.num_caisse}}</td>
+
+        <td>
+                <button class="btn btn-primary" (click)="editVendeursPopup(product_data.id)" data-toggle="modal" data-target="#addEditVendeursModal">update</button>
+            &nbsp;&nbsp;&nbsp;
+            <button class="btn btn-primary" (click)="deleteVendeurs(product_data.id)">delete</button>
+       
+            <span class="sim-pointer" (click)="deleteVendeurs(product_data.id)"><i class="fa fa-trash" aria-hidden="true"></i></span>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+<div tabindex="-1" role="dialog" aria-labelledby="addEditUserTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{popup}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <form [formGroup]="addEditvendeurForm">
+                            <div class="form-group">
+                                <label>vendeurs Name</label>
+                                <input type="text" class="form-control" formControlName="nom" [ngClass]="{'is-invalid':addEditVendeur && rf.name.errors}" />
+                                <div *ngIf="addEditProduct && rf.nom.errors" class="invalid-feedback">
+                                    <div *ngIf="rf.nom.errors.required">Name is required</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="url" class="form-control" formControlName="contact" [ngClass]="{'is-invalid':addEditVendeur && rf.contact.errors}">
+                                <div *ngIf="addEditProduct && rf.contact.errors" class="invalid-feedback">
+                                    <div *ngIf="rf.contact.errors.required">email is required</div>
+                                </div>
+                            </div>
+                    
+                           
+                            <div class="form-group">
+                                <label>num_caisse</label>
+                                <input type="number" class="form-control" formControlName="num_caisse" [ngClass]="{'is-invalid':addEditVendeur && rf.price.errors}" />
+                                <div *ngIf="addEditVendeur && rf.num_caisse.errors" class="invalid-feedback">
+                                    <div *ngIf="rf.num_caisse.errors.required">num_caisse is required</div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <button class="btn btn-primary" (click)="addNewVendeurs()">Add New</button>
+                                <button class="btn btn-primary" (click)="updateVendeurs()" >Update</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,201 @@
+{
+  "user": [
+    {
+      "name": "habib",
+      "mobNumber": "1234567891",
+      "age": 23,
+      "dob": "1997-05-08",
+      "email": "admin@gmail.com",
+      "password": "123456",
+      "gender": "Male",
+      "address": {
+        "id": 0,
+        "addLine1": "Bizerte",
+        "addLine2": "Rue el andalous",
+        "city": "bizerte centre",
+        "state": "...",
+        "zipCode": "7003"
+      },
+      "aboutYou": "I am a programmer...",
+      "uploadPhoto": "C:\\fakepath\\****.png",
+      "role": "admin",
+      "id": 1
+    },
+    {
+      "aboutYou": "esrdtfghjn,kl",
+      "age": 18,
+      "agreetc": true,
+      "dob": "1997-05-08",
+      "email": "habibhnini@gmail.com",
+      "gender": "Male",
+      "address": {
+        "id": 0,
+        "addLine1": "zertyuio",
+        "addLine2": "rtyujio",
+        "city": "ariana",
+        "state": "...",
+        "zipCode": "2065"
+      },
+      "language": [
+        "English"
+      ],
+      "mobNumber": "50431288",
+      "name": "hanini habib",
+      "password": "52241332",
+      "uploadPhoto": "C:\\fakepath\\***.PNG",
+      "role": "buyer",
+      "id": 4
+    },
+    {
+      "age": 23,
+      "agreetc": true,
+      "dob": "1997-05-08",
+      "email": "habibhnini123@gmail.com",
+      "gender": "Male",
+      "address": {
+        "id": 0,
+        "addLine1": "174 Rue 14 Janvier 2011",
+        "addLine2": "rtyujio",
+        "city": "ariana",
+        "state": "...",
+        "zipCode": "7000"
+      },
+      "language": [
+        "English"
+      ],
+      "mobNumber": "50431288",
+      "name": "Mohamed Habib Hanini",
+      "password": "08051997",
+      "uploadPhoto": "C:\\fakepath\\test.PNG",
+      "role": "seller",
+      "id": 5
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Produit 1",
+      "uploadPhoto": "C:\\Users\\Mohamedhabib Hanini\\Desktop\\liquide.jpg",
+      "productDesc": "Description",
+      "price": 14,
+      "quantity": 14,
+      "status": "publish"
+    },
+    {
+      "id": 2,
+      "name": "prod",
+      "uploadPhoto": "C:\\Users\\Mohamedhabib Hanini\\Desktop\\liquide.jpg",
+      "productDesc": "aze",
+      "price": 11,
+      "quantity": 11,
+      "status": "publish"
+    },
+    {
+      "id": 3,
+      "name": "test",
+      "uploadPhoto": "dfguhijokplmù",
+      "productDesc": "hazuidhaiud",
+      "price": 120,
+      "quantity": 12,
+      "status": "publish"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": 3,
+      "sellerId": 2,
+      "product": {
+        "id": 1,
+        "name": "Polyester Door Curtain",
+        "uploadPhoto": "https://rukminim1.flixcart.com/image/832/832/jcf487k0/curtain/w/e/y/elegant-cream-door-curtains-set-of-2-213-soe-fsb-120-120-eyelet-original-imaffk7f9wng4v4m.jpeg",
+        "productDesc": "Transform the ambiance of your home with these elegant, crushed texture, light weight, solid color curtains. These curtains are available in several colors and sizes to match to your home decor and the gracefully flowing polyester is durable and machine washable for your convenience.",
+        "mrp": "1000",
+        "dp": "499",
+        "status": "publish"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "Marathalli",
+        "addLine2": "Aswathnagar",
+        "city": "Bangalore",
+        "state": "Choose...",
+        "zipCode": 560037
+      },
+      "contact": "09040398006",
+      "dateTime": "18/07/2019"
+    },
+    {
+      "id": 2,
+      "userId": 3,
+      "sellerId": 2,
+      "product": {
+        "id": 1,
+        "name": "Polyester Door Curtain",
+        "uploadPhoto": "https://rukminim1.flixcart.com/image/832/832/jcf487k0/curtain/w/e/y/elegant-cream-door-curtains-set-of-2-213-soe-fsb-120-120-eyelet-original-imaffk7f9wng4v4m.jpeg",
+        "productDesc": "Transform the ambiance of your home with these elegant, crushed texture, light weight, solid color curtains. These curtains are available in several colors and sizes to match to your home decor and the gracefully flowing polyester is durable and machine washable for your convenience.",
+        "mrp": "1000",
+        "dp": "499",
+        "status": "publish"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "Marathalli",
+        "addLine2": "Aswathnagar",
+        "city": "Bangalore",
+        "state": "Choose...",
+        "zipCode": 560037
+      },
+      "contact": "09040398006",
+      "dateTime": "30/08/2019"
+    },
+    {
+      "id": 3,
+      "userId": 4,
+      "sellerId": 2,
+      "product": {
+        "id": 1,
+        "name": "Polyester Door Curtain",
+        "uploadPhoto": "https://rukminim1.flixcart.com/image/832/832/jcf487k0/curtain/w/e/y/elegant-cream-door-curtains-set-of-2-213-soe-fsb-120-120-eyelet-original-imaffk7f9wng4v4m.jpeg",
+        "productDesc": "Transform the ambiance of your home with these elegant, crushed texture, light weight, solid color curtains. These curtains are available in several colors and sizes to match to your home decor and the gracefully flowing polyester is durable and machine washable for your convenience.",
+        "mrp": "1000",
+        "dp": "499",
+        "status": "publish"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "zertyuio",
+        "addLine2": "rtyujio",
+        "city": "ariana",
+        "state": "...",
+        "zipCode": 2065
+      },
+      "contact": "50431288",
+      "dateTime": "12/12/2020"
+    },
+    {
+      "id": 4,
+      "userId": 4,
+      "sellerId": 2,
+      "product": {
+        "id": 1,
+        "name": "Polyester Door Curtain",
+        "uploadPhoto": "https://rukminim1.flixcart.com/image/832/832/jcf487k0/curtain/w/e/y/elegant-cream-door-curtains-set-of-2-213-soe-fsb-120-120-eyelet-original-imaffk7f9wng4v4m.jpeg",
+        "productDesc": "Transform the ambiance of your home with these elegant, crushed texture, light weight, solid color curtains. These curtains are available in several colors and sizes to match to your home decor and the gracefully flowing polyester is durable and machine washable for your convenience.",
+        "mrp": "1000",
+        "dp": "499",
+        "status": "publish"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "zertyuio",
+        "addLine2": "rtyujio",
+        "city": "ariana",
+        "state": "...",
+        "zipCode": 2065
+      },
+      "contact": "50431288",
+      "dateTime": "12/12/2020"
+    }
+  ]
+}

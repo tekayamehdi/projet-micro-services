@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,13 +24,13 @@ public class VendeursRestApi {
 	@Autowired
 	IVendeursService ivendeursservice;
 	private VendeursRepository vendeurR;
-
+	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping("/hello")
 	public String sayHello() {
 		System.out.println(title);
 		return title;
 	}
-
+	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/ajouter")
 	@ResponseBody
 	public Vendeurs ajouterVendeur(@RequestBody Vendeurs vendeur) {
@@ -37,21 +38,21 @@ public class VendeursRestApi {
 		ivendeursservice.addvendeur(vendeur);
 		return vendeur;
 	}
-
+	@CrossOrigin(origins = "http://localhost:4200")
 	@PutMapping("/update/{id}")
 	@ResponseStatus(HttpStatus.OK)
 	public Vendeurs updatevenderus(@PathVariable("id") int id, @RequestBody Vendeurs v) {
 
 		return ivendeursservice.updateVendeur(id, v);
 	}
-
+	@CrossOrigin(origins = "http://localhost:4200")
 	@DeleteMapping("/delete/{id}")
 	@ResponseStatus(HttpStatus.OK)
 	public void deleteVendeurById(@PathVariable("id") int id) {
 		ivendeursservice.deleteVendeursById(id);
 
 	}
-
+	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping(value = "/getAllVendeurs")
 	@ResponseStatus(HttpStatus.OK)
 	public List<Vendeurs> getAllVendeurs() {
@@ -59,7 +60,7 @@ public class VendeursRestApi {
 		return ivendeursservice.getAllVendeurs();
 	}
 
-
+	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/getvendeurNamebyid/{id}")
 	@ResponseBody
 	public String getVendeurNameById(@PathVariable("id") int id) {
